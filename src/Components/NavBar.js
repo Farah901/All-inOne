@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import LangComponent from "../Pages/LangComponent";
+import LangComponent from "../page/LangComponent";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ThemeToggler from "../Pages/ThemeToggler";
-import { ThemeContext } from "../Pages/ThemeContext";
+import ThemeToggler from "../page/ThemeToggler";
+import { ThemeContext } from "../page/ThemeContext";
 
 const NavBar = () => {
   const { theme } = useContext(ThemeContext); // Access theme from context

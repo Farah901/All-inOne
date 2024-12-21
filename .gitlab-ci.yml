@@ -9,6 +9,10 @@ build:
   script:
     - npm install     # Install dependencies
     - npm run build   # Build the production version of the app
+  artifacts:
+    paths:
+      - build          # The build directory is the one created by React
+    expire_in: 1 hour  # Optional: Make the artifacts expire after a certain time
 
 # Deploy stage to GitLab Pages
 pages:
@@ -17,8 +21,6 @@ pages:
     - mv build public  # Move the build folder to the public folder for GitLab Pages
   artifacts:
     paths:
-      - public  # Deploy from the 'public' folder
+      - public  # Make sure to deploy from the 'public' directory
   only:
     - main  # Only deploy on the 'main' branch, adjust if you use a different branch
-  publish:
-    path: public  # Specify where to deploy from for GitLab Pages

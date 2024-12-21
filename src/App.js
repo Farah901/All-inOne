@@ -1,18 +1,18 @@
 import React from "react";
 import {Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Profiles from "./Pages/Profiles";
-import NotFound from "./Pages/NotFound";
+import Home from "./page/Home";
+import Profiles from "./page/Profiles";
+import NotFound from "./page/NotFound";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Calculator from './Pages/Calculator'
-import WorldQuest from './Pages/WorldQuest'
-import TodoApp from './Pages/TodoApp'
-import LangProvider from './Pages/langContext'
-import ThemeProvider from "./Pages/ThemeContext";
+import Calculator from './page/Calculator'
+import WorldQuest from './page/WorldQuest'
+import TodoApp from './page/TodoApp'
+import LangProvider from './page/langContext'
+import ThemeProvider from "./page/ThemeContext";
 
 export default function App() {
   return (
-    
+
     <>    
     <LangProvider>    
     <ThemeProvider>

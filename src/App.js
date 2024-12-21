@@ -12,6 +12,7 @@ import ThemeProvider from "./Pages/ThemeContext";
 
 export default function App() {
   return (
+    
     <>    
     <LangProvider>    
     <ThemeProvider>

@@ -1,31 +1,28 @@
-image: node:16
+# GitLab CI/CD configuration file for deploying to GitLab Pages
 
 stages:
   - build
   - deploy
 
-variables:
-  CI_NODE_ENV: "production"
-  NODE_ENV: "production"
-
-before_script:
-  - npm install
-
+# Build stage
 build:
+  image: node:16  # You can adjust the node version as needed
   stage: build
   script:
-    - npm run build
+    - npm install     # Install dependencies
+    - npm run build   # Build the production version of the app
   artifacts:
     paths:
-      - build
+      - public         # Or 'build' depending on your framework (React uses 'build')
+    expire_in: 1 hour  # Optional: Make the artifacts expire after a certain time
 
+# Deploy stage to GitLab Pages
 pages:
   stage: deploy
   script:
-    # Déplace les fichiers générés dans le dossier 'public' de GitLab Pages
-    - mv build/* public/
+    - mv public/ public_html/  # Move the build folder to public_html for GitLab Pages
   artifacts:
     paths:
-      - public
+      - public_html
   only:
-    - main
+    - main  # Only deploy on the 'main' branch, adjust if you use a different branch

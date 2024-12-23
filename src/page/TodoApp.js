@@ -3,20 +3,14 @@ import logo from './logo.png';
 import NavBar from "../Components/NavBar";
 
 function DoneDeal() {
-  // To save tasks in local so after refreshing the tasks won't delete
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
-  // task title useState
   const [title, setTitle] = useState("");
-  // task description useState
   const [description, setDescription] = useState("");
-  // searching input useState
   const [search, setSearch] = useState("");
-  // Tasks filter by Status
   const [statusFilter, setStatusFilter] = useState("");
-  // Editing Tasks
   const [editingTaskId, setEditingTaskId] = useState(null);
   const [editingTitle, setEditingTitle] = useState("");
   const [editingDescription, setEditingDescription] = useState("");
@@ -77,9 +71,9 @@ function DoneDeal() {
     <>
     <NavBar/>
       <div className="done-deal-app">
-        <nav>
+        <div>
           <img className="logo-app" src={logo} alt="Logo" />
-        </nav>
+        </div>
         <div className="done-deal-input-container">
           <input
             type="text"
@@ -180,26 +174,20 @@ function DoneDeal() {
 
       <style>
         {`
-          body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fdeedc;
-          }
-
+          
           .done-deal-app {
             max-width: 800px;
             margin: 20px auto;
-            background-color: #fff8f0;
-            padding: 10px;
+            background-color: #ffffff;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
           }
 
-          logo-app {
-            width: 250px;
-            height: 150px;
-            margin-left: 35%;
-            margin-top: 0;
+          .logo-app {
+            width: 180px;
+            display: block;
+            margin: 0 auto 20px;
           }
 
           .done-deal-input-container {
@@ -217,16 +205,17 @@ function DoneDeal() {
 
           .done-deal-adding-btn {
             padding: 10px 20px;
-            background-color: #28a745;
+            background-color: #007bff;
             color: white;
             width: 100%;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
           }
 
           .done-deal-adding-btn:hover {
-            background-color: #218838;
+            background-color: #0056b3;
           }
 
           .done-deal-search-filter-container {
@@ -255,12 +244,18 @@ function DoneDeal() {
           }
 
           .done-deal-task {
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             width: calc(50% - 10px);
             box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+
+          .done-deal-task:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
           }
 
           .done-deal-task input,
@@ -305,27 +300,28 @@ function DoneDeal() {
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: opacity 0.3s ease;
           }
 
           .done-deal-task .done-deal-delete-btn {
-            background-color: #c82333;
+            background-color: #dc3545;
             width: 50%;
           }
 
           .done-deal-task .done-deal-modify-btn {
-            background-color: darkorange;
+            background-color: #ffc107;
             margin-right: 20px;
           }
 
           .done-deal-tasks-container .done-deal-save-btn {
-            background-color: brown;
+            background-color: #28a745;
             width: 45%;
             margin-right: 10%;
           }
 
           .done-deal-tasks-container .done-deal-cancel-btn {
-            background-color: #ccc;
-            color: black;
+            background-color: #6c757d;
+            color: white;
             width: 45%;
           }
 

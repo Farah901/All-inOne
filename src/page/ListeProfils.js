@@ -28,10 +28,10 @@ export default function ListeProfils({ profils, supprProfil }) {
           .profil-card {
             margin: 15px;
             background-color: #f9f9f9;
-            padding: 15px;
+            padding: 10px;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
+            display: inline-grid;
             flex-direction: column;
             align-items: center;
             transition: transform 0.3s ease;
@@ -62,10 +62,6 @@ export default function ListeProfils({ profils, supprProfil }) {
             background-color: #c0392b;
           }
 
-          .card {
-            width: 100%;
-            margin-bottom: 15px;
-          }
         `}
       </style>
     </div>

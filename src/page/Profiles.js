@@ -1,15 +1,15 @@
-// import logo from './logo.svg';
-// import Message from './Pages/Message';
-// import Action from './Pages/Action';
-// import TexteColoree from './Pages/TexteColoree';
-// import CarteImage from './Pages/CarteImage';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ListeProfils from './ListeProfils';
 import FormulaireProfil from './FormulaireProfil';
 import { useState } from 'react';
 import NavBar from '../Components/NavBar';
-function Profiles() {
+import { ThemeContext } from "../page/ThemeContext";
+import { useContext } from 'react';
 
+
+
+function Profiles() {
+  const { theme } = useContext(ThemeContext); // Access theme from context
   const [profils, setProfil]= useState([
     {
       nom: 'Alice',
@@ -49,11 +49,19 @@ function Profiles() {
   return (
     <>
     <NavBar/>
-      <h1 className='text-center'>Ajouter Profil</h1>
+    <br /><br />
+      <h1 className='text-center bb'>Ajouter Profil</h1>
       <FormulaireProfil AjouterProfil={AjouterProfil}/>
-      <hr />
-      <h1 className="text-center mt-4">Liste des Profils</h1>
+      <hr /> <br />
+      <h1 className="text-center bb">Liste des Profils</h1>
       <ListeProfils profils={profils} supprProfil={supprProfil}/>
+      <style>
+        {`
+        h1 {
+          color: ${theme === "dark" ? "white" : "black"};
+        }
+        `}
+      </style>
     </>
   );
 }

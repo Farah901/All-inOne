@@ -9,12 +9,11 @@ function Api() {
   const [error, setError] = useState(false);
   const itemsPerPage = 10;
 
-  // Fetch countries data on initial load
   useEffect(() => {
     setLoading(true);
     setError(false);
     axios
-      .get('https://restcountries.com/v2/all') // Using v2 API endpoint
+      .get('https://restcountries.com/v2/all')
       .then((response) => {
         setCountries(response.data);
         setLoading(false);
@@ -26,14 +25,11 @@ function Api() {
       });
   }, []);
 
-  // Calculate the data for the current page
   const startIndex = (page - 1) * itemsPerPage;
   const currentCountries = countries.slice(startIndex, startIndex + itemsPerPage);
 
-  // Total pages based on countries length and items per page
   const totalPages = Math.ceil(countries.length / itemsPerPage);
 
-  // Handlers for pagination buttons
   const handlePreviousPage = () => {
     if (page > 1) setPage(page - 1);
   };

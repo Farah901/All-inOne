@@ -2,14 +2,38 @@ import React from 'react'
 
 export default function CarteProfil({nom, age, profession, image}) {
 
-    // let AffichageNom = ()=> alert(`Vous avez cliquer sur : ${nom}`)
+  const cardStyle = {
+    border: '1px solid #ccc',
+    borderRadius: '10px',
+    padding: '20px',
+    width: '280px',
+    margin: '20px auto',
+    textAlign: 'center'
+  };
+
+  const imgStyle = {
+    borderRadius: '10px',
+    height: '150px',
+    width: '100%',
+    objectFit: 'cover'
+  };
+
+  const titleStyle = {
+    fontSize: '1.5em',
+    margin: '10px 0'
+  };
+
+  const textStyle = {
+    fontSize: '1em',
+    margin: '5px 0'
+  };
+
   return (
-      <div className='card w-25 m-auto'>
-        <img src={image} className='card-img-top' style={{borderRadius:"10px", height:'150px'}} alt=""/>
-        <h1 className='card-title'>Nom: {nom}</h1>
-        <p className='card-text'>Age: {age}</p>
-        <p className='card-text'>Profession: {profession}</p>
-        {/* <button className='btn btn-info' onClick={AffichageNom}>Cliquer ici</button> */}
+      <div style={cardStyle}>
+        <img src={image} style={imgStyle} alt=""/>
+        <h1 style={titleStyle}>Nom: {nom}</h1>
+        <p style={textStyle}>Age: {age}</p>
+        <p style={textStyle}>Profession: {profession}</p>
       </div>
   )
 }

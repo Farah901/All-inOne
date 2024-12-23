@@ -45,6 +45,7 @@ const App = () => {
   return (
     <>
       <NavBar />
+      <br />
       <div className="calculator-container">
         <div className="calculator">
           <div className="display">{input || "0"}</div>
@@ -71,7 +72,7 @@ const App = () => {
             justify-content: center;
             align-items: center;
             width: 100%;
-            height: 100%;
+            height: 90vh;
           }
 
           /* Calculator Styling */
@@ -97,6 +98,7 @@ const App = () => {
           /* Buttons Grid Layout */
           .buttons {
             display: grid;
+            margin: 0;
             grid-template-columns: repeat(4, 1fr);
             gap: 1px;
             background: #222;
@@ -144,14 +146,10 @@ const App = () => {
 
           /* Special Styling for Equal Button (spanning two columns) */
           .btn:nth-last-child(1) {
-            background: #05a389;
-            color: #fff;
+            background:rgb(226, 39, 39);
             grid-column: span 2;
           }
-            .btn:nth-last-child(2) {
-            background: red;
-            color: #fff;
-          }
+            
 
           .btn:nth-last-child(1):active {
             background: #026e5c;

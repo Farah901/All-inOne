@@ -1,6 +1,15 @@
 .dark{
-    background-color: rgb(12, 10, 10);
+    background-color: rgba(0, 0, 0, 0.897);
 }
 .light{
     background-color: white;
+}
+.dark nav{
+    box-shadow: 0 0 10px rgba(197, 187, 187, 0.5);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.light nav{
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }

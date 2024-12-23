@@ -9,7 +9,7 @@ const NavBar = () => {
   const { theme } = useContext(ThemeContext); // Access theme from context
 
   return (
-    <Navbar expand="lg" className={theme === "dark" ? "navbar-dark" : "navbar-light"} style={{ backgroundColor: theme === "dark" ? "rgba(26, 20, 20, 0.84)" : "rgba(245, 73, 12)" }}>
+    <Navbar expand="lg" className={theme === "dark" ? "navbar-dark" : "navbar-light"} style={{ backgroundColor: theme === "dark" ? "rgba(17, 14, 14, 0.84)" : "rgba(245, 73, 12)" }}>
       <Container>
   
         {/* Hamburger Menu Button */}

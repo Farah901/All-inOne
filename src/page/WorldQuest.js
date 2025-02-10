@@ -15,7 +15,8 @@ function Api() {
     axios
       .get('https://restcountries.com/v2/all')
       .then((response) => {
-        setCountries(response.data);
+        const filteredCountries = response.data.filter(country => country.name !== 'Israel');
+        setCountries(filteredCountries);
         setLoading(false);
       })
       .catch((error) => {
@@ -58,7 +59,6 @@ function Api() {
                   <h2>{country.name}</h2>
                   <p><strong>Region: </strong>{country.region || 'N/A'}</p>
                   <p><strong>Capital: </strong>{country.capital || 'N/A'}</p>
-                  
                 </article>
               ))}
             </div>
